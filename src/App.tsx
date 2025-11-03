@@ -6,10 +6,15 @@ import { Card } from "./components/ui/card"
 function App() {
 
   return (
-    <div className="flex">
-      <Button variant="secondary" size="sm" startIcon={<PlusIcon size="lg"/>} text="Add Content"/>
-      <Button variant="primary" size="sm" startIcon={<ShareIcon size="lg"/>} text="Share Brain"/>
-      <Card />
+    <div>
+      <div className="flex">
+        <Button variant="secondary" size="sm" startIcon={<PlusIcon size="lg"/>} text="Add Content"/>
+        <Button variant="primary" size="sm" startIcon={<ShareIcon size="lg"/>} text="Share Brain"/>
+      </div>
+      <div>
+        <Card />
+      </div>
+      
     </div>
   )
 }
