@@ -3,7 +3,9 @@ export interface buttonProps{
     size:"lg" | "md" | "sm",
     text?:string,
     startIcon?:any,
-    onClick?: ()=>void
+    onClick?: ()=>void,
+    fullwidth:boolean,
+    loading?:boolean
 }
 
 const variants={
@@ -16,13 +18,14 @@ const sizeStyles={
     "md":"p-4",
     "lg":"p-6"
 }
-const defaultStyle="rounded-md flex m-[5px] items-center "
+const defaultStyle="rounded-md flex items-center justify-center "
 
 export const Button=(props:buttonProps)=>{
     return <>
-        <button className={`${variants[props.variant]} ${sizeStyles[props.size]} ${defaultStyle}`}>
+        <button onClick={props.onClick} className={`${variants[props.variant]} ${sizeStyles[props.size]} ${defaultStyle} 
+         ${props.fullwidth?"w-full":null} ${props.loading?"opacity-45 cursor-not-allowed":"cursor-pointer"}` }>
             {props.startIcon ? <div className="pr-2">{props.startIcon}</div>:null}
-           {props.text} </button> 
+           {props.text}</button> 
     </>
 }
 

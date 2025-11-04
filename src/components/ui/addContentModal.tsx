@@ -13,7 +13,7 @@ export const AddContentModal = ({open,setModal}:{open:boolean,setModal:(arg:bool
                 </div>
                 <InputBox placeholder="Enter text" onChange={()=>{}}/>
                 <div className="flex justify-center">
-                    <Button variant="primary" size="sm" text="Click"/>
+                    <Button variant="primary" size="sm" text="Click" fullwidth/>
                 </div>
                 
             </div>
