@@ -9,8 +9,8 @@ interface CardProps{
 
 export const Card=(props:CardProps)=>{
     return <div>
-            <div className="p-5 my-2  bg-white rounded-md shadow-md outline-slate-200
-                w-92 border-gray-200 border">
+            <div className="p-2 my-2  bg-white rounded-md shadow-md outline-slate-200
+                w-full border-gray-200 border">
             <div className="flex justify-between">
                 <div className="items-center flex">
                     <ShareIcon size="md"/>
@@ -26,17 +26,18 @@ export const Card=(props:CardProps)=>{
                 </div>
             </div>
             <div className="p-2">
-                {props.type=="youtube" && <iframe className="w-full" src={props.link.replace("watch?v=","embed/")}
+                {props.type=="youtube" && <iframe className="w-full h-[300px]" src={props.link.replace("watch?v=","embed/")}
             title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; 
             encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" 
             allowFullScreen></iframe>}
 
-                {/* {props.type=="twitter" && <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <XEmbed url={props.link} width={325} />
-                </div>}  */}
-                <blockquote className="twitter-tweet">
-                <a href={props.link.replace("x.com","twitter.com")}></a> 
-                </blockquote>
+            {props.type === "twitter" && (
+                <div className="flex justify-center max-h-[300px] overflow-auto">
+                    <blockquote className="twitter-tweet">
+                    <a href={props.link.replace("x.com","twitter.com")}></a> 
+                    </blockquote>
+                </div>
+            )}
             </div> 
         </div>
     </div>
